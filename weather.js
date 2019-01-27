@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 // Results - display search results
 app.get('/results', (req, res) => {
 
-  const geocodeAddress = async (address) => {
+  const geocodeAddress = async address => {
 
     try {
       const addressEncoded = (encodeURIComponent(address))
@@ -40,7 +40,7 @@ app.get('/results', (req, res) => {
     }
   }
 
-  const getWeather = async (latitude, longitude) => {
+  const getWeather = async (latitude, longitude, address) => {
 
     try {
       const options = {
@@ -49,6 +49,7 @@ app.get('/results', (req, res) => {
       }
       const res = await rp(options)
       return weather = {
+        address,
         temperature:         Math.round(res.currently.temperature),
         feelsLike:           Math.round(res.currently.apparentTemperature),
         temperatureHigh:     Math.round(res.daily.data[0].temperatureHigh),
@@ -64,15 +65,12 @@ app.get('/results', (req, res) => {
     }
   }
 
-  geocodeAddress(req.query.search).then((location) => {
+  geocodeAddress(req.query.search).then(location => {
     if (!location) throw new Error('Location missing or invalid.')
-    const address = (location.address) 
-    getWeather(location.latitude, location.longitude).then((weatherResults) => {
-      const data = (weatherResults)
-      res.render('results', { pageTitle: `Weather for ${address}`, data, address })
-    })
+    return getWeather(location.latitude, location.longitude, location.address)
+  }).then(data => {
+    return res.render('results', { pageTitle: `Weather for ${data.address}`, data })
   }).catch(err => res.status(400).send(err.message))
 })
-
 
 app.listen(port)
