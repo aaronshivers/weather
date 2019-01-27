@@ -35,7 +35,7 @@ app.get('/results', (req, res) => {
         longitude: res.results[0].geometry.location.lng
       }
     } catch (error) {
-      console.error('error: ', error)
+      console.error(error.message)
     }
   }
 
@@ -64,12 +64,13 @@ app.get('/results', (req, res) => {
   }
 
   geocodeAddress(req.query.search).then((location) => {
+    if (!location) throw new Error('Location missing or invalid.')
     const address = (location.address) 
     getWeather(location.latitude, location.longitude).then((weatherResults) => {
       const data = (weatherResults)
       res.render('results', { pageTitle: `Weather for ${address}`, data, address })
     })
-  }).catch(err => console.log(err))
+  }).catch(err => res.status(400).send(err.message))
 })
 
 
