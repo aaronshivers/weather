@@ -1,0 +1,32 @@
+<% include partials/top %>
+
+<div class="container">
+  
+  <div class="col">
+
+    <h1>Search Page</h1>
+
+    <form action="/results" method="GET">
+
+      <div class="form-group">
+
+        <label for="addressInput">Get Weather Conditions</label>
+
+        <input type="text" class="form-control" id="addressInput" aria-describedby="addressHelp" placeholder="enter address..." name="search" required>
+
+        <small id="addressHelp" class="form-text text-muted">Enter your address to get weather results.</small>
+
+      </div>
+
+      <button type="submit" class="btn btn-lg btn-block btn-outline-primary">Submit</button>
+
+      <a href="/" class="btn btn-outline-primary btn-lg btn-block" role="button" aria-pressed="true">Back</a>
+
+    </form>
+
+  </div>
+
+</div>
+
+
+<% include partials/bottom %>
