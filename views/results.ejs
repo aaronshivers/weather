@@ -1,0 +1,49 @@
+<% include partials/top %>
+
+<div class="container">
+  
+  <div class="col">
+
+    <h1>Results Page</h1>
+
+    <div class="border">
+
+      <ul class="list-group list-group-flush border-bottom-0">
+
+        <li class="list-group-item list-group-item-success"><%= location %></li>
+
+        <li class="list-group-item">Currently: <%= data.temperature %>°F</li>
+
+        <li class="list-group-item">Currently Feels Like: <%= data.feelsLike %>°F</li>
+
+        <li class="list-group-item">Current Conditions: <%= data.currently %></li>
+
+        <li class="list-group-item">Today's High: <%= data.temperatureHigh %>°F</li>
+
+        <li class="list-group-item">Today's Low: <%= data.temperatureLow %>°F</li>
+
+        <li class="list-group-item">Today: <%= data.today %></li>
+        
+        <li class="list-group-item">Tomorrow: <%= data.tomorrow %></li>
+
+        <li class="list-group-item">Forecast: <%= data.forecast %></li>
+
+      </ul>
+
+      <div class="list-group list-group-flush border-top-0">
+
+        <a href="/weather" class="list-group-item list-group-item-action list-group-item-light">Search Another Address</a>
+
+        <a href="/" class="list-group-item list-group-item-action list-group-item-light">Back to Home</a>
+
+        <a href="https://darksky.net/poweredby/" class="list-group-item list-group-item-action list-group-item-light">Powered by Dark Sky</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<% include partials/bottom %>
