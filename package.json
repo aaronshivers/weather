@@ -1,0 +1,24 @@
+{
+  "name": "weather-web-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "weather.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaronshivers/weather-web-app.git"
+  },
+  "author": "aaron shivers",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/aaronshivers/weather-web-app/issues"
+  },
+  "homepage": "https://github.com/aaronshivers/weather-web-app#readme",
+  "dependencies": {
+    "dotenv": "^6.2.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
+  }
+}
