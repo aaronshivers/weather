@@ -1,10 +1,10 @@
-process.env.NODE_ENV !== 'development' ? require('dotenv').config() : null
+require('dotenv').config()
 
 const express = require('express')
 const rp = require('request-promise-native')
 
 const app = express()
-const port = process.env.PORT || 3000
+const port = process.env.PORT
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
