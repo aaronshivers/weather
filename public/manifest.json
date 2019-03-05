@@ -1,5 +1,6 @@
 {
-  "name": "Weather",
+  "short_name": "Weather",
+  "name": "Weather Web App",
   "icons": [{
     "src": "/drop.png",
     "type": "image/png",
@@ -10,5 +11,6 @@
     "sizes": "512x512"
   }],
   "background_color": "#593196",
+  "display": "minimal-ui",
   "theme_color": "#593196"
 }
