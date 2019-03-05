@@ -1,5 +1,14 @@
 {
   "name": "Weather",
+  "icons": [{
+    "src": "/drop.png",
+    "type": "image/png",
+    "sizes": "256x256"
+  }, {
+    "src": "/drop2.png",
+    "type": "image/png",
+    "sizes": "512x512"
+  }],
   "background_color": "#593196",
   "theme_color": "#593196"
 }
