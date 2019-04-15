@@ -1,15 +1,16 @@
 {
   "short_name": "Weather",
-  "name": "Weather Web App",
-  "icons": [{
-    "src": "/drop.png",
-    "type": "image/png",
-    "sizes": "256x256"
-  }, {
-    "src": "/drop2.png",
-    "type": "image/png",
-    "sizes": "512x512"
-  }],
+  "name": "Weather",
+  "icons": [
+    {
+      "src": "/img/android-chrome-192x192.png",
+      "sizes": "192x192","type": "image/png"
+    }, {
+      "src": "/img/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
   "start_url": "https://weather.aaronshivers.com/",
   "background_color": "#593196",
   "display": "minimal-ui",
