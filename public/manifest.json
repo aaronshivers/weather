@@ -10,6 +10,7 @@
     "type": "image/png",
     "sizes": "512x512"
   }],
+  "start_url": "https://weather.aaronshivers.com/",
   "background_color": "#593196",
   "display": "minimal-ui",
   "theme_color": "#593196"
